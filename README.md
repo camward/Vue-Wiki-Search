@@ -17,6 +17,9 @@ npm install
 # install vuex
 npm install vuex -S
 
+# install jsonp
+npm install jsonp
+
 # serve with hot reload at localhost:8080
 npm run dev
 
