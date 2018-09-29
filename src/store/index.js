@@ -6,14 +6,18 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        results: []
+        results: [],
+        loading: false
     },
     getters: {
         results(state) {
             return state.results.map(item => {
                 item.url = 'https://ru.wikipedia.org/wiki/' + item.title
-            return item
-        })
+                return item
+            })
+        },
+        loading (state) {
+            return state.loading
         }
     },
     mutations: {
@@ -25,6 +29,8 @@ const store = new Vuex.Store({
         search({ commit }, query) {
             const url = 'https://ru.wikipedia.org/w/api.php?action=query&list=search&format=json&srsearch=' + query
 
+            commit('set', { type: 'loading', items: true })
+
             jsonp(url, (error, response) => {
                 if(error) {
                     throw error
@@ -33,7 +39,8 @@ const store = new Vuex.Store({
                 const results = response.query.search
 
                 commit('set', { type: 'results', items: results })
-        })
+                commit('set', { type: 'loading', items: false })
+            })
         }
     }
 })

@@ -1,30 +1,7 @@
-# Vue-Wiki-Search
+# Поиск по Википедии
 
-> A Vue.js project
+Склонировать проект: `https://github.com/camward/Vue-Wiki-Search.git`
 
-## Build Setup
+Перейти в папку проекта и установить зависимости: `npm i` или `yarn`
 
-``` bash
-# install vue-cli
-npm install -g vue-cli
-
-# install template
-npm init webpack-simple .
-
-# install dependencies
-npm install
-
-# install vuex
-npm install vuex -S
-
-# install jsonp
-npm install jsonp
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-```
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Запустить проект командой `npm run dev` и перейти по адресу `http://localhost:8080/`
